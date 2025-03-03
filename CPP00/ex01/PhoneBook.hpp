@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 14:45:13 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/02/28 15:47:45 by ncharbog         ###   ########.fr       */
+/*   Created: 2025/02/28 14:36:31 by ncharbog          #+#    #+#             */
+/*   Updated: 2025/03/03 17:51:27 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+# include "Contact.hpp"
+# include <iostream>
 
-#include "phonebook.h"
-
-class Contact
+class PhoneBook
 {
 	private:
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	phone_number;
-		std::string	darkest_secret;
-
+		Contact contacts[8];
+		int		currentIndex;
 	public:
-		void	set_contact(void);
-		void	get_contact(void);
+		PhoneBook(void);
+		void addContact(void);
+		void searchContact(void);
+		void printContact(int index);
+		std::string truncateString(std::string str);
 };
 
 #endif

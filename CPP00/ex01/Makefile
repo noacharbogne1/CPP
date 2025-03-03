@@ -6,7 +6,7 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/28 13:08:20 by ncharbog          #+#    #+#              #
-#    Updated: 2025/02/28 14:20:31 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/03/03 17:38:20 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ NAME = phonebook
 
 C++FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = megaphone.cpp
+SRC = Contact.cpp \
+	main.cpp \
+	PhoneBook.cpp
 
 OBJ_DIR = .objects
 

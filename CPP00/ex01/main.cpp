@@ -6,27 +6,35 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 14:36:36 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/02/28 15:47:39 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/03 17:50:29 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
+#include "PhoneBook.hpp"
 
 int	main(int argc, char **argv)
 {
-	std::string	arg;
+	PhoneBook	phoneBook;
+	std::string	input;
 
-	if (argc == 2)
+	(void) argv;
+	(void) argc;
+	while (1)
 	{
-		arg = argv[1];
-		if (arg == "ADD")
-		else if (arg == "SEARCH")
-		else if (arg == "EXIT")
-			return 0;
-		else
-			std::cout << "Invalid command" << std::endl;
+		std::cout << "Enter command : ";
+		std::cin >> input;
+		if (std::cin.eof())
+		{
+			std::cout << "CTRL+D called" << std::endl;
+			break ;
+		}
+
+		if (input == "ADD")
+			phoneBook.addContact();
+		else if (input == "SEARCH")
+			phoneBook.searchContact();
+		else if (input == "EXIT")
+			break ;
 	}
-	else
-		std::cout << "Invalid number of arguments" << std::endl;
-	return 0;
+	return (0);
 }

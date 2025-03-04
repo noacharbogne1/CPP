@@ -6,11 +6,12 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 14:36:36 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/03 17:50:29 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/04 10:45:31 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
 
 int	main(int argc, char **argv)
 {
@@ -22,19 +23,21 @@ int	main(int argc, char **argv)
 	while (1)
 	{
 		std::cout << "Enter command : ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (std::cin.eof())
 		{
 			std::cout << "CTRL+D called" << std::endl;
 			break ;
 		}
-
-		if (input == "ADD")
+		if (input == "ADD" && input.length() == 3)
 			phoneBook.addContact();
-		else if (input == "SEARCH")
+		else if (input == "SEARCH" && input.length() == 6)
 			phoneBook.searchContact();
-		else if (input == "EXIT")
+		else if (input == "EXIT" && input.length() == 4)
 			break ;
+		else
+			std::cout << "Invalid command" << std::endl;
+		std::cout << std::endl;
 	}
 	return (0);
 }

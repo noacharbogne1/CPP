@@ -6,7 +6,7 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 11:17:48 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/04 11:28:10 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/03/04 14:13:05 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ NAME = job
 
 C++FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Account.cpp
+SRC = Account.cpp \
+	tests.cpp
 
 OBJ_DIR = .objects
 

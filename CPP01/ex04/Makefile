@@ -14,9 +14,9 @@ CC = c++
 
 NAME = sed
 
-C++FLAGS = -Wall -Wextra -Werror -std=c++98
+C++FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRC = main.cpp \
+SRC = main.cpp
 
 OBJ_DIR = .objects
 

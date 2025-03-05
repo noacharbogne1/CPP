@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:31:12 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/04 15:39:57 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/05 10:11:57 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@
 class	Zombie
 {
 	private:
-	std::string name;
+		std::string name;
 	public:
-	Zombie(std::string name);
-	~Zombie(void);
-	void announce(void);
+		Zombie(void);
+		~Zombie(void);
+		void set_name(std::string name);
+		void announce(void);
 };
 
 void	randomChump(std::string name);

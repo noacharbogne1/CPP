@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:44:30 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/04 16:23:44 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/05 10:07:20 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ class Zombie
 	private:
 		std::string name;
 	public:
-		Zombie(std::string name);
+		Zombie(void);
 		~Zombie(void);
+		void set_name(std::string name);
 		void announce(void);
 };
 

@@ -6,19 +6,17 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 14:30:13 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/05 10:17:12 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/03/05 10:17:51 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = moarbrainz
+NAME = BRAIN
 
 C++FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp \
-	zombieHorde.cpp \
-	Zombie.cpp
+SRC = main.cpp
 
 OBJ_DIR = .objects
 

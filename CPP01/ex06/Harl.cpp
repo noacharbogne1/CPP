@@ -43,5 +43,7 @@ void    Harl::complain(int level){
 			(arg.*funcPtr[2])();
 		case 3 :
 			(arg.*funcPtr[3])();
+		default :
+			std::cout << "No matching case" << std::endl;
 	}
 }

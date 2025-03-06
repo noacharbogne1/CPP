@@ -6,13 +6,13 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 14:30:13 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/06 10:03:27 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/03/06 10:13:33 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = harl
+NAME = harlFilter
 
 C++FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 

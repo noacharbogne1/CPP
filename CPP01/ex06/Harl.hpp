@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 16:06:06 by noa               #+#    #+#             */
-/*   Updated: 2025/03/06 10:12:38 by ncharbog         ###   ########.fr       */
+/*   Created: 2025/03/05 16:07:39 by noa               #+#    #+#             */
+/*   Updated: 2025/03/06 10:36:48 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main(void){
-	Harl	burger;
+# include <iostream>
+# include <string>
+# include <algorithm>
 
-	burger.complain("DEBUG");
-	burger.complain("INFO");
-	burger.complain("WARNING");
-	burger.complain("ERROR");
-	burger.complain("NAWAK");
-	return 1;
-}
+class Harl
+{
+    private:
+        void debug(void);
+        void info(void);
+        void warning(void);
+        void error(void);
+    public:
+        void complain(int level);
+};
+
+enum Level
+{
+    DEBUG = 1,
+    INFO,
+    WARNING,
+    ERROR
+};
+
+#endif

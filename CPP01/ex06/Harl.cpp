@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:07:12 by noa               #+#    #+#             */
-/*   Updated: 2025/03/06 10:12:57 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/06 10:32:40 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,20 @@ void    Harl::error(void){
 	std::cout << "|ERROR| This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void    Harl::complain(std::string level){
+void    Harl::complain(int level){
 
 	Harl    arg;
-	std::string arr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void (Harl::*funcPtr[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-	for (int i = 0; i < 5; i++)
+	switch(level)
 	{
-		if (level == arr[i])
-		{
-			(arg.*funcPtr[i])();
-			return ;
-		}
+		case 0 :
+			(arg.*funcPtr[0])();
+		case 1 :
+			(arg.*funcPtr[1])();
+		case 2 :
+			(arg.*funcPtr[2])();
+		case 3 :
+			(arg.*funcPtr[3])();
 	}
-	std::cout << level << ": Invalid level identifier :(" << std::endl;
 }

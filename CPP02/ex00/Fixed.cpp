@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:13 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/07 10:22:20 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:24:56 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	Fixed::getRawBits(void) const{
 }
 
 void Fixed::setRawBits(int const raw){
-	val = raw;
+	val = (raw << bits);
 }
 
 Fixed::~Fixed(void){

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:13 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/07 10:22:20 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/07 11:34:15 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@ const int Fixed::bits = 8;
 Fixed::Fixed(void){
 	val = 0;
 	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int nb){
+	
+}
+
+Fixed::Fixed(const float nb){
+
 }
 
 Fixed::Fixed(const Fixed &toCopy){
@@ -30,6 +38,11 @@ Fixed	&Fixed::operator=(const Fixed &a){
 	return *this;
 }
 
+std::ostream &operator<<(std::ostream &os, const Fixed &a){
+	os << a.toFloat();
+	return os;
+}
+
 int	Fixed::getRawBits(void) const{
 	std::cout << "getRawBits member function called" << std::endl;
 	return val;
@@ -37,6 +50,14 @@ int	Fixed::getRawBits(void) const{
 
 void Fixed::setRawBits(int const raw){
 	val = raw;
+}
+
+float Fixed::toFloat(void) const{
+
+}
+
+int Fixed::toInt(void) const{
+
 }
 
 Fixed::~Fixed(void){

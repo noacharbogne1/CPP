@@ -6,7 +6,7 @@
 /*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:35:38 by noa               #+#    #+#             */
-/*   Updated: 2025/03/10 17:04:51 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/10 17:54:19 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ class Point
         Point(const Point &toCopy);
         ~Point(void);
         Point &operator=(const Point &a);
-        int getX(void) const;
-        int getY(void) const;
-        bool bsp(Point const a, Point const b, Point const c, Point const point);
+        Fixed getX(void) const;
+        Fixed getY(void) const;
         
 };
 

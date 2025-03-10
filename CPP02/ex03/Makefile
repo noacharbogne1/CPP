@@ -6,7 +6,7 @@
 #    By: noa <noa@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/28 13:08:20 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/10 17:04:05 by noa              ###   ########.fr        #
+#    Updated: 2025/03/10 17:32:42 by noa              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 NAME = a.out
 
-C++FLAGS = -Wall -Wextra -Werror -std=c++98
+C++FLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 SRC = main.cpp \
 	Point.cpp \

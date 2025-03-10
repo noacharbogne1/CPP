@@ -6,7 +6,7 @@
 /*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:03 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/10 12:20:21 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/10 15:27:24 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,27 @@
 
 int main(void) {
 
-	Fixed a;
-	Fixed const b(10);
-	Fixed const c(42.42f);
-	Fixed const d(b);
-
-	a = Fixed(1234.4321f);
-
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
+	Fixed a(10);
+	Fixed const b(10.16f);
+	Fixed c(a + b);
 
 	if (a > b)
-	std::cout << "a is higher than b" << std::endl;
-	if (d == b)
-	std::cout << "d is equal to b" << std::endl;
+		std::cout << "a is higher than b" << std::endl;
+	if (a < b)
+		std::cout << "b is higher than a" << std::endl;
+	if ((a + b) == c)
+		std::cout << "a + b is equal to c" << std::endl;
+	std::cout << c << "\t\tis c at start" << std::endl;
+	std::cout << a << "\t\tis a at start\n" << std::endl;
+	std::cout << ++a << "\tis a at ++a\n" << std::endl;
+	std::cout << a << "\tis a after ++a\n" << std::endl;
+	std::cout << a++ <<"\tis a at a++\n" << std::endl;
+	std::cout << a << "\tis a after a++\n" << std::endl;
+
+	std::cout << b << "\t\tvalue of b\n" << std::endl;
+
+	std::cout << Fixed::max(a, b) << "\t\tthe max of a and b\n" << std::endl;
+	std::cout << Fixed::min(a, b) << "\tthe min of a and b\n" << std::endl;
 
 	return 0;
 }

@@ -6,10 +6,11 @@
 /*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:13 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/10 12:19:59 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/10 15:12:07 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Fixed.hpp"
 
 const int Fixed::bits = 8;
 
@@ -18,11 +19,11 @@ Fixed::Fixed(void){
 }
 
 Fixed::Fixed(const int nb){
-	val = (nb << bits);
+	val = nb << this->bits;
 }
 
 Fixed::Fixed(const float nb){
-	val = static_cast<int>(roundf(nb * (1 << bits)));
+	val = roundf(nb * (1 << this->bits));
 }
 
 Fixed	&Fixed::operator=(const Fixed &a){
@@ -48,7 +49,7 @@ void Fixed::setRawBits(int const raw){
 }
 
 float Fixed::toFloat(void) const{
-	return static_cast<float>(val / (roundf(1 << bits)));
+	return ((float)val / (float)(roundf(1 << bits)));
 }
 
 int Fixed::toInt(void) const{
@@ -56,7 +57,6 @@ int Fixed::toInt(void) const{
 }
 
 Fixed::~Fixed(void){
-	std::cout << "Destructor called" << std::endl;
 }
 
 bool	operator>(const Fixed &first, const Fixed &snd){
@@ -84,31 +84,20 @@ bool	operator<=(const Fixed &first, const Fixed &snd){
 }
 
 Fixed	operator+(const Fixed &first, const Fixed &snd){
-	Fixed	result;
-	
-	result.setRawBits(first.getRawBits() + snd.getRawBits());
-	return result;
+	return (first.toFloat() + snd.toFloat());
+
 }
 
 Fixed	operator-(const Fixed &first, const Fixed &snd){
-	Fixed	result;
-	
-	result.setRawBits(first.getRawBits() - snd.getRawBits());
-	return result;
+	return (first.toFloat() - snd.toFloat());
 }
 
 Fixed	operator*(const Fixed &first, const Fixed &snd){
-	Fixed	result;
-	
-	result.setRawBits(first.getRawBits() * snd.getRawBits());
-	return result;
+	return (first.toFloat() * snd.toFloat());
 }
 
 Fixed	operator/(const Fixed &first, const Fixed &snd){
-	Fixed	result;
-	
-	result.setRawBits(first.getRawBits() / snd.getRawBits());
-	return result;
+	return (first.toFloat() / snd.toFloat());
 }
 
 Fixed	&Fixed::operator++(void){

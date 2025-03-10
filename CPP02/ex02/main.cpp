@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:03 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/07 14:12:19 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/10 12:20:21 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int main(void) {
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
 
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	if (a > b)
+	std::cout << "a is higher than b" << std::endl;
+	if (d == b)
+	std::cout << "d is equal to b" << std::endl;
 
 	return 0;
 }

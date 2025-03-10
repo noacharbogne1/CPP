@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:13 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/07 14:26:58 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/10 12:19:59 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
 
 const int Fixed::bits = 8;
 
@@ -58,4 +57,106 @@ int Fixed::toInt(void) const{
 
 Fixed::~Fixed(void){
 	std::cout << "Destructor called" << std::endl;
+}
+
+bool	operator>(const Fixed &first, const Fixed &snd){
+	return first.getRawBits() > snd.getRawBits();
+}	
+
+bool	operator<(const Fixed &first, const Fixed &snd){
+	return first.getRawBits() < snd.getRawBits();
+}	
+
+bool	operator==(const Fixed &first, const Fixed &snd){
+	return first.getRawBits() == snd.getRawBits();
+}
+
+bool	operator!=(const Fixed &first, const Fixed &snd){
+	return first.getRawBits() != snd.getRawBits();
+}
+
+bool	operator>=(const Fixed &first, const Fixed &snd){
+	return first.getRawBits() >= snd.getRawBits();
+}
+
+bool	operator<=(const Fixed &first, const Fixed &snd){
+	return first.getRawBits() <= snd.getRawBits();
+}
+
+Fixed	operator+(const Fixed &first, const Fixed &snd){
+	Fixed	result;
+	
+	result.setRawBits(first.getRawBits() + snd.getRawBits());
+	return result;
+}
+
+Fixed	operator-(const Fixed &first, const Fixed &snd){
+	Fixed	result;
+	
+	result.setRawBits(first.getRawBits() - snd.getRawBits());
+	return result;
+}
+
+Fixed	operator*(const Fixed &first, const Fixed &snd){
+	Fixed	result;
+	
+	result.setRawBits(first.getRawBits() * snd.getRawBits());
+	return result;
+}
+
+Fixed	operator/(const Fixed &first, const Fixed &snd){
+	Fixed	result;
+	
+	result.setRawBits(first.getRawBits() / snd.getRawBits());
+	return result;
+}
+
+Fixed	&Fixed::operator++(void){
+	val++;
+	return *this;
+}
+
+Fixed	&Fixed::operator--(void){
+	val--;
+	return *this;
+}
+
+Fixed	Fixed::operator++(int){
+	Fixed tmp = *this;
+	++val;
+	return tmp;
+}
+
+Fixed	Fixed::operator--(int){
+	Fixed tmp = *this;
+	--val;
+	return tmp;
+}
+
+Fixed	&Fixed::min(Fixed &first, Fixed &snd){
+	if (first < snd)
+		return first;
+	else
+		return snd;
+}
+
+const Fixed	&Fixed::min(const Fixed &first, const Fixed &snd){
+	if (first < snd)
+		return first;
+	else
+		return snd;
+}
+
+Fixed	&Fixed::max(Fixed &first, Fixed &snd){
+	if (first > snd)
+		return first;
+	else
+		return snd;
+}
+
+const Fixed	&Fixed::max(const Fixed &first, const Fixed &snd){
+	if (first > snd)
+		return first;
+	else
+		return snd;
 }

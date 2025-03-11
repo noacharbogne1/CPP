@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:35:17 by noa               #+#    #+#             */
-/*   Updated: 2025/03/10 18:29:35 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/11 12:58:38 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ Point::Point(const Point &toCopy){
 }
 
 Fixed   Point::getY(void) const{
-    return y;
+	return y;
 }
 
 Fixed   Point::getX(void) const{
-    return x;
+	return x;
 }
 
 Point	&Point::operator=(const Point &a) {
 	const_cast<Fixed&>(x) = a.getX();
-    const_cast<Fixed&>(y) = a.getY();
-    return *this;
+	const_cast<Fixed&>(y) = a.getY();
+	return *this;
 }
 
 Point::~Point(void){

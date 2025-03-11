@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:13 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/10 15:12:07 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/11 12:57:42 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ Fixed::~Fixed(void){
 
 bool	operator>(const Fixed &first, const Fixed &snd){
 	return first.getRawBits() > snd.getRawBits();
-}	
+}
 
 bool	operator<(const Fixed &first, const Fixed &snd){
 	return first.getRawBits() < snd.getRawBits();
-}	
+}
 
 bool	operator==(const Fixed &first, const Fixed &snd){
 	return first.getRawBits() == snd.getRawBits();

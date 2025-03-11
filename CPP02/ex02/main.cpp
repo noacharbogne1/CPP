@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:03 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/10 15:27:24 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/11 12:57:48 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main(void) {
+int main(void){
 
 	Fixed a(10);
 	Fixed const b(10.16f);
@@ -24,6 +24,7 @@ int main(void) {
 		std::cout << "b is higher than a" << std::endl;
 	if ((a + b) == c)
 		std::cout << "a + b is equal to c" << std::endl;
+		
 	std::cout << c << "\t\tis c at start" << std::endl;
 	std::cout << a << "\t\tis a at start\n" << std::endl;
 	std::cout << ++a << "\tis a at ++a\n" << std::endl;

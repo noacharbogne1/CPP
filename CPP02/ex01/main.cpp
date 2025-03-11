@@ -6,13 +6,13 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:03 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/07 14:12:19 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 12:45:47 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main(void) {
+int main(void){
 
 	Fixed a;
 	Fixed const b(10);

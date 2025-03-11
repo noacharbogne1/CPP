@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:13 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/07 14:24:43 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 12:53:30 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ std::ostream &operator<<(std::ostream &os, const Fixed &a){
 }
 
 int	Fixed::getRawBits(void) const{
-	std::cout << "getRawBits member function called" << std::endl;
 	return val;
 }
 

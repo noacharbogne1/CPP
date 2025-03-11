@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:31:12 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/05 10:11:57 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 11:00:56 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <string>
-
 
 class	Zombie
 {

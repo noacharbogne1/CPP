@@ -6,14 +6,13 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:31:25 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/05 10:13:57 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 11:00:36 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name)
-{
+Zombie* newZombie(std::string name){
 	Zombie	*newOne;
 
 	newOne = new Zombie;

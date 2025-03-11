@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:06:06 by noa               #+#    #+#             */
-/*   Updated: 2025/03/06 10:12:38 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 12:33:41 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ int main(void){
 	burger.complain("INFO");
 	burger.complain("WARNING");
 	burger.complain("ERROR");
-	burger.complain("NAWAK");
 	return 1;
 }

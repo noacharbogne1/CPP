@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:07:12 by noa               #+#    #+#             */
-/*   Updated: 2025/03/06 10:32:40 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 12:36:12 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ void    Harl::complain(int level){
 	Harl    arg;
 	void (Harl::*funcPtr[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-	switch(level)
-	{
+	switch(level){
 		case 0 :
 			(arg.*funcPtr[0])();
 		case 1 :
@@ -43,6 +42,7 @@ void    Harl::complain(int level){
 			(arg.*funcPtr[2])();
 		case 3 :
 			(arg.*funcPtr[3])();
+			break ;
 		default :
 			std::cout << "No matching case" << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 13:08:39 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/06 10:51:40 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 10:42:00 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <string>
 #include <cctype>
 
-int	main(int argc, char **argv)
-{
+int	main(int argc, char **argv){
 	char c;
 
 	if (argc > 1){
@@ -30,5 +29,5 @@ int	main(int argc, char **argv)
 	else{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	}
-	return (0);
+	return 0;
 }

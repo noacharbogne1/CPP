@@ -6,20 +6,18 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 14:36:33 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/04 11:14:48 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 10:50:35 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void)
-{
+PhoneBook::PhoneBook(void){
 	this->currentIndex = 0;
 	this->nb_contacts = 0;
 }
 
-void	PhoneBook::addContact(void)
-{
+void	PhoneBook::addContact(void){
 	std::string	input;
 
 	std::cout << "First Name: ";
@@ -41,15 +39,13 @@ void	PhoneBook::addContact(void)
 	nb_contacts++;
 }
 
-std::string PhoneBook::truncateString(std::string str)
-{
+std::string PhoneBook::truncateString(std::string str){
 	if (str.length() > 10)
 		return (str.substr(0, 9) + '.');
 	return (str);
 }
 
-void	PhoneBook::printContact(int index)
-{
+void	PhoneBook::printContact(int index){
 	std::cout << "First Name : " << contacts[index].getFirstName() << std::endl;
 	std::cout << "Last Name : " << contacts[index].getLastName() << std::endl;
 	std::cout << "Nickname : " << contacts[index].getNickname() << std::endl;
@@ -57,13 +53,11 @@ void	PhoneBook::printContact(int index)
 	std::cout << "Darkest Secret : " << contacts[index].getDarkestSecret() << std::endl;
 }
 
-void	PhoneBook::searchContact(void)
-{
+void	PhoneBook::searchContact(void){
 	std::string	input;
 	int	i = 0;
 
-	if (nb_contacts > 0)
-	{
+	if (nb_contacts > 0){
 		std::cout.width(10); std::cout << "INDEX" << "|";
 		std::cout.width(10); std::cout << "FIRST NAME" << "|";
 		std::cout.width(10); std::cout << "LAST NAME" << "|";
@@ -71,13 +65,11 @@ void	PhoneBook::searchContact(void)
 		std::cout << std::endl;
 
 	}
-	else
-	{
+	else{
 		std::cout << "No contacts yet !" << std::endl;
 		return ;
 	}
-	while (i < nb_contacts)
-	{
+	while (i < nb_contacts){
 		std::cout.width(10); std::cout << i + 1 << "|";
 		std::cout.width(10); std::cout << truncateString(contacts[i].getFirstName()) << "|";
 		std::cout.width(10); std::cout << truncateString(contacts[i].getLastName()) << "|";

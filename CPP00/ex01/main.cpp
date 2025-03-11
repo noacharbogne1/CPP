@@ -6,26 +6,22 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 14:36:36 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/04 10:45:31 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 10:50:54 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 
-int	main(int argc, char **argv)
-{
+int	main(void){
 	PhoneBook	phoneBook;
 	std::string	input;
 
-	(void) argv;
-	(void) argc;
 	while (1)
 	{
 		std::cout << "Enter command : ";
 		std::getline(std::cin, input);
-		if (std::cin.eof())
-		{
+		if (std::cin.eof()){
 			std::cout << "CTRL+D called" << std::endl;
 			break ;
 		}

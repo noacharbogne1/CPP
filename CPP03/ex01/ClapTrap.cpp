@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:24 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/11 17:13:33 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:12:42 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,26 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &a){
 
 ClapTrap::~ClapTrap(void){
 	std::cout << "Destructor called" << std::endl;
+}
+
+void	ClapTrap::setHitPoints(unsigned int amount){
+	this->hitPoints = amount;
+}
+
+void	ClapTrap::setEnergyPoints(unsigned int amount){
+	this->energyPoints = amount;
+}
+
+void	ClapTrap::setAttackDamage(unsigned int amount){
+	this->attackDamage = amount;
+}
+
+unsigned int	ClapTrap::getHitPoints(void){
+	return this->hitPoints;
+}
+
+unsigned int	ClapTrap::getEnergyPoints(void){
+	return this->energyPoints;
 }
 
 void	ClapTrap::attack(const std::string &target){

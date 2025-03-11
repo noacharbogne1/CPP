@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/11 17:07:29 by ncharbog          #+#    #+#             */
+/*   Updated: 2025/03/11 17:16:40 by ncharbog         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
+{
+	private:
+
+	public:
+		void guardGate(void);
+};
+
+
+#endif

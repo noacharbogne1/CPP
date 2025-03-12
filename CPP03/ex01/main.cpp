@@ -6,21 +6,25 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:15 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/11 16:55:36 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:59:36 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void){
-	ClapTrap	a("Chien méchant");
+	ScavTrap	derived("Roger");
+	ClapTrap	base("Annie");
 
-	a.attack("Petit enfant");
-	a.takeDamage(8);
-	a.beRepaired(2);
-	a.takeDamage(4);
-	a.beRepaired(2);
-	a.attack("Petit enfant");
-	a.takeDamage(4);
+	derived.attack("random");
+	derived.takeDamage(20);
+	derived.takeDamage(20);
+	derived.takeDamage(20);
+	derived.takeDamage(10);
+	derived.takeDamage(20);
+	derived.beRepaired(10);
+	derived.takeDamage(20);
+	derived.attack("random");
+	base.takeDamage(5);
 	return 0;
 }

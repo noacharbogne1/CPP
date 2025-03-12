@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:07:29 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/11 17:16:40 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:20:37 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@
 class ScavTrap : public ClapTrap
 {
 	private:
-
+		bool	guardMode;
 	public:
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &toCopy);
+		ScavTrap &operator=(const ScavTrap &a);
+		~ScavTrap(void);
+
 		void guardGate(void);
 };
-
 
 #endif

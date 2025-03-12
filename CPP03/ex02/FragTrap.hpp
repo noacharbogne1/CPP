@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 11:03:05 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/12 11:08:12 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/12 12:34:15 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class FragTrap : public ClapTrap
 		FragTrap &operator=(const FragTrap &a);
 		~FragTrap(void);
 		void highFivesGuys(void);
+		void attack(const std::string &target);
 };
 
 #endif

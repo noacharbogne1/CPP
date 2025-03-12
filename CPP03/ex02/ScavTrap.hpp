@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:07:29 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/12 10:20:37 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/12 11:12:57 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap : public ClapTrap
 		~ScavTrap(void);
 
 		void guardGate(void);
+		void attack(const std::string &target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:33 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/12 10:21:02 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/13 12:10:35 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ClapTrap
 		int	energyPoints;
 		int	attackDamage;
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &toCopy);
 		ClapTrap &operator=(const ClapTrap &a);

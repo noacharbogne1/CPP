@@ -6,18 +6,26 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:07:15 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/12 11:12:28 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/13 12:12:58 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void){
+	this->name = "Default";
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+	std::cout << name << " : ScavTrap default constructor called" << std::endl;
+}
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-	std::cout << name << " : ScavTrap constructor called" << std::endl;
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
-	this->guardMode = false;
+	std::cout << name << " : ScavTrap name constructor called" << std::endl;
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 20;
+	guardMode = false;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &a) : ClapTrap(a.name){

@@ -6,16 +6,26 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 12:42:14 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/12 14:31:25 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/13 12:11:44 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name){
+DiamondTrap::DiamondTrap(void){
+	this->name = "Default";
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+	std::cout << name << " : DiamondTrap default constructor called" << std::endl;
+}
+
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name){
+	this->_name = name;
 	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
+	this->energyPoints = ScavTrap::_energyPointsConst;
 	this->attackDamage = FragTrap::attackDamage;
+	std::cout << name << " : DiamondTrap name constructor called" << std::endl;
 
 }
 
@@ -34,7 +44,7 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &toCopy){
 }
 
 DiamondTrap::~DiamondTrap(void){
-	std::cout << this->name << " : DiamondTrap destructor called" << std::endl;
+	std::cout << this->_name << " : DiamondTrap destructor called" << std::endl;
 }
 
 void	DiamondTrap::attack(const std::string &target){

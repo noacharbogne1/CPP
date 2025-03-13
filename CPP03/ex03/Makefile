@@ -6,13 +6,13 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 14:30:13 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/12 14:23:49 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/03/13 10:14:14 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = fragTrap
+NAME = diamondTrap
 
 C++FLAGS = -Wall -Wextra -Werror -std=c++98
 

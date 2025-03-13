@@ -6,18 +6,26 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:24 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/12 10:52:47 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/13 12:10:40 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name){
-	this->name = name;
+ClapTrap::ClapTrap(void){
+	this->name = "Default";
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
-	std::cout << name << " : ClapTrap constructor called" << std::endl;
+	std::cout << name << " : ClapTrap default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name){
+	this->name = name;
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
+	std::cout << this->name << " : ClapTrap name constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &toCopy){

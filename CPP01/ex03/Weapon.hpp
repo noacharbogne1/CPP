@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:29:24 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/05 11:53:43 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 14:30:16 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 # define WEAPON_HPP
 
 # include <iostream>
-# include <string>
 # include <cstddef>
 
 class Weapon
 {
 	private:
-	std::string type;
+		std::string type;
 	public:
-		void setType(std::string str);
 		Weapon(std::string str);
-		std::string getType(void);
+		void setType(std::string str);
+		std::string const &getType(void);
 };
 
 # include "HumanA.hpp"

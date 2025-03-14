@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:31:00 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/11 11:00:49 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 14:22:28 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ Zombie::Zombie(void){
 	std::cout << "A new zombie appeared" << std::endl;
 }
 
-void	Zombie::set_name(std::string name){
+void	Zombie::setName(std::string name){
 	this->name = name;
-	announce();
 }
 
 Zombie::~Zombie(void){

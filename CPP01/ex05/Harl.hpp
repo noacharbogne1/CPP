@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:07:39 by noa               #+#    #+#             */
-/*   Updated: 2025/03/05 16:37:51 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/14 14:53:58 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,6 @@ class Harl
         void error(void);
     public:
         void complain(std::string level);
-};
-
-enum Level 
-{
-    DEBUG = 1,
-    INFO,
-    WARNING,
-    ERROR
 };
 
 #endif

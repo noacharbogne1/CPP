@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:31:12 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/11 11:00:56 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 14:28:20 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
-#include <string>
 
 class	Zombie
 {
@@ -23,7 +22,7 @@ class	Zombie
 	public:
 		Zombie(void);
 		~Zombie(void);
-		void set_name(std::string name);
+		void setName(std::string name);
 		void announce(void);
 };
 

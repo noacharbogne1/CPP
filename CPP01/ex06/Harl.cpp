@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:07:12 by noa               #+#    #+#             */
-/*   Updated: 2025/03/11 12:36:12 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 14:58:05 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ void    Harl::complain(int level){
 			(arg.*funcPtr[3])();
 			break ;
 		default :
-			std::cout << "No matching case" << std::endl;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }

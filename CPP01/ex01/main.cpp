@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:43:54 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/11 11:10:00 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 14:22:04 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 int	main(void){
 	Zombie	*horde = zombieHorde(5, "Les zamours");
+
+	for (int i = 0; i < 5; i++)
+		horde[i].announce();
+
 	delete[] horde;
 	return 1;
 }

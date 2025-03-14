@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:16:31 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/11 12:36:20 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 14:57:53 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ int	main(int argc, char **argv){
 		Harl	burger;
 		std::string str = argv[1];
 		int	level = getLevel(str);
-		if (level >= 0)
-			burger.complain(level);
-		else
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		burger.complain(level);
 	}
 	else
 		std::cout << "Invalid call to harlFilter" << std::endl;

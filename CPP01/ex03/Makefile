@@ -6,15 +6,15 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 14:30:13 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/05 10:28:56 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/03/14 14:51:21 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
+CXX = c++
 
 NAME = unnecessaryViolence
 
-C++FLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp \
 	Weapon.cpp \
@@ -28,16 +28,16 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) -o $(NAME) $(OBJ)
+	$(CXX) -o $(NAME) $(OBJ)
 
 $(OBJ_DIR)/%.o: %.cpp
-	@mkdir -p $(@D)
-	@$(CC) $(C++FLAGS) -c $< -o $@
+	mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 re:	fclean all
 
 .PHONY: all clean fclean re

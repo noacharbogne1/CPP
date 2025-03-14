@@ -6,12 +6,11 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:17:30 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/11 11:14:02 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 14:27:45 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
 
 int	main(void){
 	std::string	str = "HI THIS IS BRAIN";

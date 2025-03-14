@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:12 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 15:46:01 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 09:33:45 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,27 @@
 
 int main()
 {
+	std::cout << "//Examples of good inheritance pratice//" << std::endl << std::endl;
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+	delete meta;
+	delete i;
+	delete j;
+
+	std::cout << std::endl << "//Examples of bad inheritance pratice//" << std::endl << std::endl;
+	const WrongAnimal* metaWrong = new WrongAnimal();
+	const WrongAnimal* iWrong = new WrongCat();
+	std::cout << iWrong->getType() << " " << std::endl;
+	iWrong->makeSound();
+	metaWrong->makeSound();
+	delete metaWrong;
+	delete iWrong;
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:21 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 15:46:24 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 09:32:03 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 
 class WrongAnimal
 {
-	protected :
+	  protected :
 		std::string	type;
-    public:
-        WrongAnimal(void);
-        WrongAnimal(const WrongAnimal& other);
-        WrongAnimal &operator=(const WrongAnimal &other);
-        ~WrongAnimal();
-		void makeSound(void);
+	public:
+		WrongAnimal(void);
+		WrongAnimal(const WrongAnimal& other);
+		WrongAnimal &operator=(const WrongAnimal &other);
+		~WrongAnimal();
+		std::string getType(void) const;
+		void makeSound(void) const;
 };
 
 # include "WrongCat.hpp"

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:45:01 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 15:45:02 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 09:28:25 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongCat : public WrongAnimal
         WrongCat(const WrongCat& other);
         WrongCat &operator=(const WrongCat &other);
         ~WrongCat(void);
-		void makeSound(void);
+		void makeSound(void) const;
 };
 
 #endif

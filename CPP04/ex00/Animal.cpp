@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:27 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 15:16:15 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 09:41:40 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Animal &Animal::operator=(const Animal &other)
 
 Animal::~Animal(void)
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "Virtual Animal destructor called" << std::endl;
 	return ;
 }
 

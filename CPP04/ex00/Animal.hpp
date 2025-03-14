@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:29 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 15:21:22 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/14 09:42:23 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
 	Animal(void);
 	Animal(const Animal& other);
 	Animal &operator=(const Animal &other);
-	~Animal();
+	virtual ~Animal();
 	virtual void makeSound(void) const;
 	std::string getType(void) const;
 };

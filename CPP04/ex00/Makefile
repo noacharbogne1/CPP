@@ -6,7 +6,7 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 14:30:13 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/13 15:15:56 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/03/14 09:30:30 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp \
 	Animal.cpp \
 	Dog.cpp \
-	Cat.cpp
+	Cat.cpp \
+	WrongAnimal.cpp \
+	WrongCat.cpp
 
 OBJ_DIR = .objects
 

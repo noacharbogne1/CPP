@@ -6,13 +6,13 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 14:30:13 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/14 09:55:39 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/03/14 10:40:57 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 
-NAME = Animal
+NAME = onFire
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -21,7 +21,8 @@ SRC = main.cpp \
 	Dog.cpp \
 	Cat.cpp \
 	WrongAnimal.cpp \
-	WrongCat.cpp
+	WrongCat.cpp \
+	Brain.cpp
 
 OBJ_DIR = .objects
 

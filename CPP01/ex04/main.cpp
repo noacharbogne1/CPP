@@ -30,7 +30,7 @@ void	replaceFile(std::ifstream &in, char **argv){
 			if ((line.compare(i, s1.length(), s1)) == 0){
 				line.erase(i, s1.length());
 				line.insert(i, s2);
-				i += s2.length();
+				i += s2.length() - 1;
 			}
 		}
 		file << line << std::endl;

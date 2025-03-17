@@ -6,7 +6,7 @@
 /*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:47:29 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/17 11:32:33 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/17 12:13:18 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ MateriaSource::MateriaSource(void)
     for (int i = 0; i < 4; i++)
         this->source[i] = NULL;
     this->_idx = 0;
+    this->full = false;
     return ;
 }
 
@@ -36,9 +37,16 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
         delete source[i];
     delete[] source;
     this->_idx = other._idx;
-    this->source = new AMateria*[_idx];
-    for (int i = 0; i < _idx; i++)
+    this->full = other.full;
+    this->source = new AMateria*[4];
+    int i = 0;
+    while (i < 4)
+    {
+        if (i > this->_idx && this->full == false)
+            break;
         this->source[i] = other.source[i]->clone();
+        i++;
+    }
     return (*this);
 }
 
@@ -54,11 +62,10 @@ MateriaSource::~MateriaSource(void)
 
 void    MateriaSource::learnMateria(AMateria *m)
 {
-    if (this->_idx == 3)
-    {
-        delete this->source[(_idx + 1) % 4];
-        this->
-    }
+    if (this->_idx == 4)
+        this->_idx = 0;
+    if (this->source[_idx])
+        delete this->source[_idx];
     this->source[_idx] = m->clone();
     this->_idx = (this->_idx + 1) % 4;
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: noa <noa@student.42.fr>                    +#+  +:+       +#+         #
+#    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 14:30:13 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/17 10:37:51 by noa              ###   ########.fr        #
+#    Updated: 2025/03/17 15:41:41 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CXX = c++
 
 NAME = aMateria
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 SRC = main.cpp \
 	AMateria.cpp \

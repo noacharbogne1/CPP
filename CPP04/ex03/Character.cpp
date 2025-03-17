@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:47:22 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/17 10:47:44 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/17 18:22:31 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Character::Character(void) : ICharacter()
 {
     std::cout << "Character default constructor called" << std::endl;
-    this->name = "default";
+    this->name = "default Character";
     this->items = new AMateria*[4];
     for (int i = 0; i < 4; i++)
         this->items[i] = NULL;
@@ -57,7 +57,7 @@ Character &Character::operator=(const Character &other)
 Character::~Character(void)
 {
     std::cout << "Character destructor called" << std::endl;
-    for (int i = 0; i < _idx; ++i)
+    for (int i = 0; i < _idx; i++)
         delete items[i];
     delete[] items;
     return ;
@@ -71,23 +71,27 @@ std::string const &Character::getName(void) const
 void Character::equip(AMateria *m)
 {
     if (this->_idx > 3)
+        std::cout << "Materias' inventory of Character " << this->name << " is full !" << std::endl;
+    else if (!m)
+        std::cout << "Not a valid Materia to equip Character " << this->name << std::endl;
+    else
     {
-        std::cout << "Items of Character " << this->name << " are full !" << std::endl;
-        return ;
+        if (this->inItems(m))
+            this->items[_idx] = m->clone();
+        else
+            this->items[_idx] = m;
+        this->_idx++;
     }
-    if (m->getType() == "ice")
-    this->items[_idx] = m;
-    else if (m->getType() == "cure")
-    this->items[_idx] = m;
-    this->_idx++;
+    if (!this->inItems(m))
+        delete m;
 }
 
 void Character::unequip(int idx)
 {
-    if (idx > this->_idx || idx < 0)
+    if ((idx > this->_idx) || idx < 0)
         std::cout << "No Materia found at index " << idx
-            << " for Character " << this->name;
-    else
+            << " for Character " << this->name << std::endl;
+    else if (this->items[idx])
     {
         std::cout << "Character " << this->name
             << " unequiped Materia " << this->items[idx]->getType() << std::endl;
@@ -98,9 +102,22 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-    if (idx >= 0 && idx <= this->_idx && items[idx])
-        this->items[idx]->use(target);
-    else
+    if (idx < 0 || idx > this->_idx)
+    {
         std::cout << "Invalid index : no Materia to use at index "
-        << idx << " for Character " << this->name << std::endl;
+            << idx << " for Character " << this->name << std::endl;
+        return ;
+    }
+    else if (items[idx])
+        this->items[idx]->use(target);
+}
+
+int Character::inItems(AMateria *m)
+{
+    for(int i = 0; i < 4; i++)
+    {
+        if(this->items[i] && this->items[i] == m)
+            return 1;
+    }
+    return 0;
 }

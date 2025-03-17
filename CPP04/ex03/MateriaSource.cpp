@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:47:29 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/17 12:13:18 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/17 18:46:17 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ MateriaSource::MateriaSource(void)
     for (int i = 0; i < 4; i++)
         this->source[i] = NULL;
     this->_idx = 0;
-    this->full = false;
     return ;
 }
 
@@ -37,16 +36,9 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
         delete source[i];
     delete[] source;
     this->_idx = other._idx;
-    this->full = other.full;
     this->source = new AMateria*[4];
-    int i = 0;
-    while (i < 4)
-    {
-        if (i > this->_idx && this->full == false)
-            break;
+    for(int i = 0; i < this->_idx; i++)
         this->source[i] = other.source[i]->clone();
-        i++;
-    }
     return (*this);
 }
 
@@ -62,26 +54,37 @@ MateriaSource::~MateriaSource(void)
 
 void    MateriaSource::learnMateria(AMateria *m)
 {
-    if (this->_idx == 4)
-        this->_idx = 0;
-    if (this->source[_idx])
-        delete this->source[_idx];
-    this->source[_idx] = m->clone();
-    this->_idx = (this->_idx + 1) % 4;
+    if (this->_idx > 4)
+        std::cout << "The inventory of Materias is full !" << std::endl;
+    else
+    {
+        if (this->inSource(m))
+            this->source[_idx] = m->clone();
+        else
+            this->source[_idx] = m;
+        this->_idx++;
+    }
+    if (!this->inSource(m))
+        delete m;
 }
 
 AMateria    *MateriaSource::createMateria(std::string const &type)
 {
-    AMateria *toCreate;
-    
-    if (type == "cure")
-        toCreate = new Cure();
-    else if (type == "ice")
-        toCreate = new Ice();
-    else
+    for(int i = 0; i < this->_idx; i++)
     {
-        std::cout << "No Materia named " << type << std::endl;
-        return NULL;
+        if (this->source[i] && this->source[i]->getType() == type)
+            return this->source[i]->clone();
     }
-    return (toCreate);
+    std::cout << "No Materia named " << type << std::endl;
+    return NULL;
+}
+
+int MateriaSource::inSource(AMateria *m)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->source[i] && this->source[i] == m)
+            return 1;
+    }
+    return 0;
 }

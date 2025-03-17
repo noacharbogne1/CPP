@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:37:22 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 15:09:30 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:23:14 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure(void)
+Cure::Cure(void) : AMateria()
 {
     std::cout << "Cure default constructor called" << std::endl;
     this->type = "cure";
     return ;
 }
 
-Cure::Cure(const Cure &other)
+Cure::Cure(const Cure &other) : AMateria()
 {
     std::cout << "Cure copy constructor called" << std::endl;
     *this = other;

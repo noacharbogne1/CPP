@@ -3,34 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:47:22 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 16:59:22 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:47:44 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(void)
+Character::Character(void) : ICharacter()
 {
     std::cout << "Character default constructor called" << std::endl;
     this->name = "default";
-    this->items = NULL;
+    this->items = new AMateria*[4];
+    for (int i = 0; i < 4; i++)
+        this->items[i] = NULL;
     this->_idx = 0;
     return ;
 }
 
-Character::Character(std::string name)
+Character::Character(std::string name) : ICharacter()
 {
     std::cout << "Character name constructor called" << std::endl;
     this->name = name;
-    this->items = NULL;
+    this->items = new AMateria*[4];
+    for (int i = 0; i < 4; i++)
+        this->items[i] = NULL;
     this->_idx = 0;
     return ;
 }
 
-Character::Character(const Character &other)
+Character::Character(const Character &other) : ICharacter()
 {
     std::cout << "Character copy constructor called" << std::endl;
     *this = other;
@@ -59,27 +63,44 @@ Character::~Character(void)
     return ;
 }
 
+std::string const &Character::getName(void) const
+{
+    return this->name;
+}
+
 void Character::equip(AMateria *m)
 {
-    this->_idx++;
     if (this->_idx > 3)
     {
         std::cout << "Items of Character " << this->name << " are full !" << std::endl;
         return ;
     }
     if (m->getType() == "ice")
-        this->items[_idx] = new Ice();
+    this->items[_idx] = m;
     else if (m->getType() == "cure")
-        this->items[_idx] = new Cure();
+    this->items[_idx] = m;
+    this->_idx++;
 }
+
 void Character::unequip(int idx)
 {
-    this->items[idx] = NULL;
+    if (idx > this->_idx || idx < 0)
+        std::cout << "No Materia found at index " << idx
+            << " for Character " << this->name;
+    else
+    {
+        std::cout << "Character " << this->name
+            << " unequiped Materia " << this->items[idx]->getType() << std::endl;
+        this->items[idx] = NULL;
+        this->_idx--;
+    }
 }
+
 void Character::use(int idx, ICharacter &target)
 {
-    if (idx >= 0 && idx < 4)
+    if (idx >= 0 && idx <= this->_idx && items[idx])
         this->items[idx]->use(target);
     else
-        std::cout << "Invalid index" << std::endl;
+        std::cout << "Invalid index : no Materia to use at index "
+        << idx << " for Character " << this->name << std::endl;
 }

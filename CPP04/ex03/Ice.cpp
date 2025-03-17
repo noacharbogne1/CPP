@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:37:27 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 15:07:25 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:27:03 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(void)
+Ice::Ice(void) : AMateria()
 {
     std::cout << "Ice default constructor called" << std::endl;
     this->type = "ice";
     return ;
 }
 
-Ice::Ice(const Ice &other)
+Ice::Ice(const Ice &other) : AMateria()
 {
     std::cout << "Ice copy constructor called" << std::endl;
     *this = other;

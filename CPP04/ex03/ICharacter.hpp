@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:23:35 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 15:51:53 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:37:37 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ class ICharacter
     protected:
         std::string name;
     public:
-        ICharacter(void);
-        ICharacter(const ICharacter& other);
-        ICharacter &operator=(const ICharacter &other);
         virtual ~ICharacter() {}
         virtual std::string const & getName() const = 0;
         virtual void equip(AMateria* m) = 0;

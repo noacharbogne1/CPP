@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
+/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:23:42 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 15:04:59 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:08:40 by noa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 AMateria::AMateria(void)
 {
     std::cout << "AMateria default constructor called" << std::endl;
-    this->type = "Materia";
+    this->type = "default Materia";
     return ;
 }
 
@@ -53,5 +53,6 @@ std::string const &AMateria::getType(void) const
 
 void AMateria::use(ICharacter &target)
 {
-    std::cout << "Materia : nothing to display" << std::endl;
+    (void)target;
+    //std::cout << "Materia used on " << target.getType() << std::endl;
 }

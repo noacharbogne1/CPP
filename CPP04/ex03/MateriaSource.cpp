@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:47:29 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/17 18:46:17 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 10:48:21 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource(void)
 {
-    std::cout << "MateriaSource default constructor called" << std::endl;
+    std::cout << GREY << "MateriaSource default constructor called" << RESET << std::endl;
     this->source = new AMateria*[4];
     for (int i = 0; i < 4; i++)
         this->source[i] = NULL;
@@ -24,7 +24,7 @@ MateriaSource::MateriaSource(void)
 
 MateriaSource::MateriaSource(const MateriaSource &other)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << GREY << "Copy constructor called" << RESET << std::endl;
     *this = other;
     return ;
 }
@@ -44,7 +44,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 
 MateriaSource::~MateriaSource(void)
 {
-    std::cout << "MateriaSource Destructor called" << std::endl;
+    std::cout << GREY << "MateriaSource destructor called" << RESET << std::endl;
     for (int i = 0; i < _idx; i++)
         delete source[i];
     delete[] source;
@@ -54,14 +54,16 @@ MateriaSource::~MateriaSource(void)
 
 void    MateriaSource::learnMateria(AMateria *m)
 {
-    if (this->_idx > 4)
-        std::cout << "The inventory of Materias is full !" << std::endl;
+    if (this->_idx > 3)
+        std::cout << RED << "The inventory of Materias is full !" << RESET << std::endl;
     else
     {
         if (this->inSource(m))
             this->source[_idx] = m->clone();
         else
             this->source[_idx] = m;
+        std::cout << GREEN << "Materia " << this->source[_idx]->getType()
+            << " learned at index " << "[" << this->_idx << "/3]" << RESET << std::endl;
         this->_idx++;
     }
     if (!this->inSource(m))
@@ -75,7 +77,7 @@ AMateria    *MateriaSource::createMateria(std::string const &type)
         if (this->source[i] && this->source[i]->getType() == type)
             return this->source[i]->clone();
     }
-    std::cout << "No Materia named " << type << std::endl;
+    std::cout << RED << "No Materia named " << type << RESET << std::endl;
     return NULL;
 }
 

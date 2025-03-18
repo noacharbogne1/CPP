@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:37:27 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/17 10:27:03 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/18 10:31:19 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 Ice::Ice(void) : AMateria()
 {
-    std::cout << "Ice default constructor called" << std::endl;
+    std::cout << GREY << "Ice default constructor called" << RESET << std::endl;
     this->type = "ice";
     return ;
 }
 
 Ice::Ice(const Ice &other) : AMateria()
 {
-    std::cout << "Ice copy constructor called" << std::endl;
+    std::cout << GREY << "Ice copy constructor called" << RESET << std::endl;
     *this = other;
     return ;
 }
 
 Ice &Ice::operator=(const Ice &other)
 {
-    std::cout << "Ice assignment operator called" << std::endl;
+    std::cout << GREY << "Ice assignment operator called" << RESET << std::endl;
     this->type = other.type;
     return (*this);
 }
 
 Ice::~Ice(void)
 {
-    std::cout << "Ice destructor called" << std::endl;
+    std::cout << GREY << "Ice destructor called" << RESET << std::endl;
     return ;
 }
 
@@ -48,6 +48,6 @@ AMateria    *Ice::clone(void) const
 
 void Ice::use(ICharacter &target)
 {
-    std::cout << "Ice :\"* shoots an ice bolt at "
-        << target.getName() << " *\"" << std::endl;
+    std::cout << GREEN << "Ice :\"* shoots an ice bolt at "
+        << target.getName() << " *\"" << RESET << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:37:24 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/17 10:26:32 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/18 10:29:55 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
-
+# include "Colors.hpp"
 
 class Cure : public AMateria
 {

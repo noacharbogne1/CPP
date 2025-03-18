@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:47:20 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/17 18:14:00 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 10:27:27 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "ICharacter.hpp"
 # include "Ice.hpp"
 # include "Cure.hpp"
+# include "Colors.hpp"
 
 class Character : public ICharacter
 {

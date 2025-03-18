@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:47:22 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 10:47:32 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:15:00 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Character::Character(void) : ICharacter()
 {
-    std::cout << GREY << "Character default constructor called" << RESET << std::endl;
-    this->name = "default Character";
+    std::cout << BLUE << "Character" << GREY << " default constructor called" << RESET << std::endl;
+    this->name = "Default";
     this->items = new AMateria*[4];
     for (int i = 0; i < 4; i++)
         this->items[i] = NULL;
@@ -25,7 +25,7 @@ Character::Character(void) : ICharacter()
 
 Character::Character(std::string name) : ICharacter()
 {
-    std::cout << GREY << "Character name constructor called" << RESET << std::endl;
+    std::cout << BLUE << "Character" << GREY << " name constructor called" << RESET << std::endl;
     this->name = name;
     this->items = new AMateria*[4];
     for (int i = 0; i < 4; i++)
@@ -36,30 +36,44 @@ Character::Character(std::string name) : ICharacter()
 
 Character::Character(const Character &other) : ICharacter()
 {
-    std::cout << GREY << "Character copy constructor called" << RESET << std::endl;
+    std::cout << BLUE << "Character" << GREY << " copy constructor called" << RESET << std::endl;
+    this->_idx = 0;
     *this = other;
     return ;
 }
 
 Character &Character::operator=(const Character &other)
 {
-    std::cout << GREY << "Character assignment operator called" << RESET << std::endl;
-    for (int i = 0; i < _idx; ++i)
-        delete items[i];
-    delete[] items;
+    std::cout << BLUE << "Character" << GREY << " assignment operator called" << RESET << std::endl;
+    if (this == &other)
+        return *this;
+    if (this->_idx > 0)
+    {
+        for (int i = 0; i < this->_idx; ++i)
+            delete items[i];
+        delete[] items;
+    }
     this->_idx = other._idx;
-    this->items = new AMateria*[_idx];
-    for (int i = 0; i < _idx; i++)
-        this->items[i] = other.items[i]->clone();
-    return (*this);
+    this->items = new AMateria*[4];
+    for (int i = 0; i < 4; i++)
+        this->items[i] = NULL;
+    for (int i = 0; i < 4; i++)
+    {
+        if (other.items[i] != NULL)
+        {
+            this->items[i] = other.items[i]->clone();
+            this->items[i]->setIsNull(other.items[i]->getIsNull());
+        }
+    }
+    return *this;
 }
 
 Character::~Character(void)
 {
-    std::cout << GREY << "Character destructor called" << RESET << std::endl;
-    for (int i = 0; i < _idx; i++)
-        delete items[i];
-    delete[] items;
+    std::cout << BLUE << "Character" << GREY << " destructor called" << RESET << std::endl;
+    for (int i = 0; i < this->_idx; i++)
+        delete this->items[i];
+    delete[] this->items;
     return ;
 }
 
@@ -97,11 +111,11 @@ void Character::unequip(int idx)
     if ((idx >= this->_idx) || idx < 0)
         std::cout << RED << "No Materia found at index " << idx
             << " for Character " << this->name << RESET << std::endl;
-    else if (this->items[idx] && this->items[idx]->getIsNull() == false)
+    else if (this->items[idx] && !this->items[idx]->getIsNull())
     {
         std::cout << GREEN << "Character " << this->name
             << " unequiped Materia " << this->items[idx]->getType()
-            << " at index [" << this->_idx << "/3]" << RESET << std::endl;
+            << " at index [" << idx << "/3]" << RESET << std::endl;
         this->items[idx]->setIsNull(true);
     }
     else

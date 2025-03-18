@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:37:22 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 10:30:34 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:16:45 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,34 @@
 
 Cure::Cure(void) : AMateria()
 {
-    std::cout << GREY << "Cure default constructor called" << RESET << std::endl;
+    std::cout << CYAN << "Cure" << GREY << " default constructor called" << RESET << std::endl;
     this->type = "cure";
     return ;
 }
 
 Cure::Cure(const Cure &other) : AMateria()
 {
-    std::cout << GREY << "Cure copy constructor called" << RESET << std::endl;
+    std::cout << CYAN << "Cure" << GREY << " copy constructor called" << RESET << std::endl;
     *this = other;
     return ;
 }
 
 Cure &Cure::operator=(const Cure &other)
 {
-    std::cout << GREY << "Cure assignment operator called" << RESET << std::endl;
+    std::cout << CYAN << "Cure" << GREY << " assignment operator called" << RESET << std::endl;
     this->type = other.type;
     return (*this);
 }
 
 Cure::~Cure(void)
 {
-    std::cout << GREY << "Cure destructor called" << RESET << std::endl;
+    std::cout << CYAN << "Cure" << GREY << " destructor called" << RESET << std::endl;
     return ;
 }
 
 AMateria    *Cure::clone(void) const
 {
-    AMateria    *clone = new Cure();
-
-    return clone;
+    return new Cure(*this);
 }
 
 void Cure::use(ICharacter &target)

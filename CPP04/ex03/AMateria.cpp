@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:23:42 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 10:27:10 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:13:06 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 AMateria::AMateria(void)
 {
-    std::cout << GREY <<"AMateria default constructor called" << RESET << std::endl;
+    std::cout << YELLOW << "AMateria" << GREY << " default constructor called" << RESET << std::endl;
     this->type = "default Materia";
     this->isNull = true;
     return ;
@@ -22,7 +22,7 @@ AMateria::AMateria(void)
 
 AMateria::AMateria(std::string const &type)
 {
-    std::cout << GREY << "AMateria type constructor called" << RESET << std::endl;
+    std::cout << YELLOW << "AMateria" << GREY << " type constructor called" << RESET << std::endl;
     this->type = type;
     this->isNull = true;
     return ;
@@ -30,14 +30,14 @@ AMateria::AMateria(std::string const &type)
 
 AMateria::AMateria(const AMateria &other)
 {
-    std::cout << GREY << "AMateria copy constructor called" << RESET << std::endl;
+    std::cout << YELLOW << "AMateria" << GREY << " copy constructor called" << RESET << std::endl;
     *this = other;
     return ;
 }
 
 AMateria &AMateria::operator=(const AMateria &other)
 {
-    std::cout << GREY << "AMateria assignment operator called" << RESET << std::endl;
+    std::cout << YELLOW << "AMateria" << GREY << "assignment operator called" << RESET << std::endl;
     this->type = other.type;
     this->isNull = other.isNull;
     return (*this);
@@ -45,7 +45,7 @@ AMateria &AMateria::operator=(const AMateria &other)
 
 AMateria::~AMateria(void)
 {
-    std::cout << GREY << "AMateria destructor called" << RESET << std::endl;
+    std::cout << YELLOW << "AMateria" << GREY << " destructor called" << RESET << std::endl;
     return ;
 }
 

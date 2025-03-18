@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:19 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/07 09:49:52 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 11:28:09 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ class Fixed
 		Fixed(void);
 		Fixed(const Fixed &toCopy);
 		Fixed &operator=(const Fixed &a);
+		~Fixed(void);
+		
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
-		~Fixed(void);
 };
 
 #endif

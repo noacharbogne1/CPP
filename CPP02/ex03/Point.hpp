@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:35:38 by noa               #+#    #+#             */
-/*   Updated: 2025/03/10 17:54:19 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/18 12:25:11 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Point
         Point &operator=(const Point &a);
         Fixed getX(void) const;
         Fixed getY(void) const;
-        
 };
 
 #endif

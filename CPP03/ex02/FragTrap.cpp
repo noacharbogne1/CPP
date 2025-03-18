@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 11:02:58 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 12:09:20 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 13:05:01 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 FragTrap::FragTrap(void){
 	this->name = "Default";
-	this->hitPoints = 10;
-	this->energyPoints = 10;
-	this->attackDamage = 0;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 	std::cout << name << " : FragTrap default constructor called" << std::endl;
 }
 

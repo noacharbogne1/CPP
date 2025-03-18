@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:33 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 12:06:10 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:40:49 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class ClapTrap
 		ClapTrap &operator=(const ClapTrap &a);
 		~ClapTrap(void);
 
-		//member functions
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

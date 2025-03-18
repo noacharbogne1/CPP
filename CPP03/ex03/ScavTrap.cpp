@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:07:15 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 12:12:58 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 13:04:08 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 ScavTrap::ScavTrap(void){
 	this->name = "Default";
-	this->hitPoints = 10;
-	this->energyPoints = 10;
-	this->attackDamage = 0;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
+	guardMode = false;
 	std::cout << name << " : ScavTrap default constructor called" << std::endl;
 }
 

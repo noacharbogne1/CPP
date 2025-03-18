@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 12:42:24 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 12:11:22 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 13:07:28 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
-		std::string	_name;
+		std::string	name;
 	public:
 		DiamondTrap(void);
 		DiamondTrap(std::string name);

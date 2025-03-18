@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 12:42:14 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/13 12:11:44 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 13:08:35 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 DiamondTrap::DiamondTrap(void){
 	this->name = "Default";
-	this->hitPoints = 10;
-	this->energyPoints = 10;
-	this->attackDamage = 0;
+	this->hitPoints = FragTrap::hitPoints;
+	this->energyPoints = ScavTrap::energyPointsConst;
+	this->attackDamage = FragTrap::attackDamage;
 	std::cout << name << " : DiamondTrap default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name){
-	this->_name = name;
+	this->name = name;
 	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::_energyPointsConst;
+	this->energyPoints = ScavTrap::energyPointsConst;
 	this->attackDamage = FragTrap::attackDamage;
 	std::cout << name << " : DiamondTrap name constructor called" << std::endl;
 
@@ -44,7 +44,7 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &toCopy){
 }
 
 DiamondTrap::~DiamondTrap(void){
-	std::cout << this->_name << " : DiamondTrap destructor called" << std::endl;
+	std::cout << this->name << " : DiamondTrap destructor called" << std::endl;
 }
 
 void	DiamondTrap::attack(const std::string &target){
@@ -52,6 +52,6 @@ void	DiamondTrap::attack(const std::string &target){
 }
 
 void	DiamondTrap::whoAmI(void){
-	std::cout << "DiamondTrap _name : " << this->_name
-	<< " | ClapTrap name : " << this->name << std::endl;
+	std::cout << "DiamondTrap _name : " << this->name
+	<< " | ClapTrap name : " << this->ClapTrap::name << std::endl;
 }

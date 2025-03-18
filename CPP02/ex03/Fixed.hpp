@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noa <noa@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:19 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/10 14:46:22 by noa              ###   ########.fr       */
+/*   Updated: 2025/03/18 11:14:54 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,48 +23,50 @@ class Fixed
 		static const int bits;
 	public:
 		Fixed(void);
+		Fixed(const Fixed &toCopy);
+		Fixed &operator=(const Fixed &a);
 		~Fixed(void);
+
+		// other constructors
 		Fixed(const int nb);
 		Fixed(const float nb);
-		Fixed(const Fixed &toCopy);
-		
+
 		//getter / setter
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
-		
+
 		// conversion
 		float toFloat(void) const;
 		int toInt(void) const;
 
 		// comparision operators
-		friend bool	operator>(const Fixed &first, const Fixed &snd);
-		friend bool	operator<(const Fixed &first, const Fixed &snd);
-		friend bool	operator==(const Fixed &first, const Fixed &snd);
-		friend bool	operator!=(const Fixed &first, const Fixed &snd);
-		friend bool	operator<=(const Fixed &first, const Fixed &snd);
-		friend bool	operator>=(const Fixed &first, const Fixed &snd);
-		
+		bool	operator>(const Fixed &snd);
+		bool	operator<(const Fixed &snd);
+		bool	operator==(const Fixed &snd);
+		bool	operator!=(const Fixed &snd);
+		bool	operator<=(const Fixed &snd);
+		bool	operator>=(const Fixed &snd);
+
 		// arithmetic operators
-		friend Fixed	operator+(const Fixed &first, const Fixed &snd);
-		friend Fixed	operator-(const Fixed &first, const Fixed &snd);
-		friend Fixed	operator*(const Fixed &first, const Fixed &snd);
-		friend Fixed	operator/(const Fixed &first, const Fixed &snd);
-		
+		Fixed	operator+(const Fixed &snd);
+		Fixed	operator-(const Fixed &snd);
+		Fixed	operator*(const Fixed &snd);
+		Fixed	operator/(const Fixed &snd);
+
 		// in/decresing operators
 		Fixed	&operator++(void);
 		Fixed	&operator--(void);
 		Fixed	operator++(int);
 		Fixed	operator--(int);
-		
+
 		// min/max
 		static Fixed	&min(Fixed &first, Fixed &snd);
 		static const Fixed	&min(const Fixed &first, const Fixed &snd);
 		static Fixed	&max(Fixed &first, Fixed &snd);
 		static const Fixed	&max(const Fixed &first, const Fixed &snd);
-		
-		// other overloading
-		friend std::ostream &operator<<(std::ostream &os, const Fixed &a);
-		Fixed &operator=(const Fixed &a);
-};
+
+	};
+
+std::ostream &operator<<(std::ostream &os, const Fixed &a);
 
 #endif

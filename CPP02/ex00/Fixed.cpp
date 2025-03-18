@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:56:13 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/07 14:24:56 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/18 10:54:30 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed(void){
 
 Fixed::Fixed(const Fixed &toCopy){
 	std::cout << "Copy constructor called" << std::endl;
-	val = toCopy.getRawBits();
+	*this = toCopy;
 }
 
 Fixed	&Fixed::operator=(const Fixed &a){

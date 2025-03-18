@@ -6,15 +6,15 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/28 13:08:20 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/07 09:55:22 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/03/18 10:51:17 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
+CXX = c++
 
 NAME = a.out
 
-C++FLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp \
 	Fixed.cpp
@@ -26,16 +26,16 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) -o $(NAME) $(OBJ)
+	$(CXX) -o $(NAME) $(OBJ)
 
 $(OBJ_DIR)/%.o: %.cpp
-	@mkdir -p $(@D)
-	@$(CC) $(C++FLAGS) -c $< -o $@
+	mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 re:	fclean all
 
 .PHONY: all clean fclean re

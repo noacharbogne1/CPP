@@ -3,22 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: noa <noa@student.42.fr>                    +#+  +:+       +#+         #
+#    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/28 13:08:20 by ncharbog          #+#    #+#              #
-#    Updated: 2025/03/10 17:32:42 by noa              ###   ########.fr        #
+#    Updated: 2025/03/18 11:21:25 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
+CXX = c++
 
-NAME = a.out
+NAME = bsp
 
-C++FLAGS = -Wall -Wextra -Werror -g -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 SRC = main.cpp \
 	Point.cpp \
-	Fixed.cpp
+	Fixed.cpp \
+	Bsp.cpp
 
 OBJ_DIR = .objects
 
@@ -27,16 +28,16 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) -o $(NAME) $(OBJ)
+	$(CXX) -o $(NAME) $(OBJ)
 
 $(OBJ_DIR)/%.o: %.cpp
-	@mkdir -p $(@D)
-	@$(CC) $(C++FLAGS) -c $< -o $@
+	mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 re:	fclean all
 
 .PHONY: all clean fclean re

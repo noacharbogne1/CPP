@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:23:20 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 17:04:28 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/19 09:33:25 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,29 @@ int main(void)
         me.equip(tmp4);
 
         me.unequip(2);
+        me.unequip(2);
+        me.unequip(3);
 
         AMateria* tmp5 = src->createMateria("cure");
         me.equip(tmp5);
 
         AMateria* tmp6 = src->createMateria("cure");
         me.equip(tmp6);
+
+        std::cout << std::endl << MAGENTA << "/// TESTS TO USE MATERIAS ///"
+            << RESET << std::endl << std::endl;
+
+        ICharacter* edgar = new Character("edgar");
+        ICharacter* rosetta = new Character("rosetta");
+
+        AMateria* tmp;
+        tmp = src->createMateria("ice");
+        edgar->equip(tmp);
+        tmp = src->createMateria("cure");
+        edgar->equip(tmp);
+
+        edgar->use(0, *rosetta);
+        edgar->use(1, *rosetta);
 
         std::cout << std::endl << MAGENTA << "/// TESTING THE COPY CONSTRUCTOR OF CHARACTER ///"
             << RESET << std::endl << std::endl;
@@ -62,5 +79,7 @@ int main(void)
         << RESET << std::endl << std::endl;
 
         delete src;
+        delete rosetta;
+        delete edgar;
         return 0;
 }

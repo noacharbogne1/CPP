@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:47:22 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 17:15:00 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/19 09:21:29 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ Character &Character::operator=(const Character &other)
     std::cout << BLUE << "Character" << GREY << " assignment operator called" << RESET << std::endl;
     if (this == &other)
         return *this;
+    this->name = other.name;
     if (this->_idx > 0)
     {
         for (int i = 0; i < this->_idx; ++i)
@@ -109,7 +110,7 @@ void Character::equip(AMateria *m)
 void Character::unequip(int idx)
 {
     if ((idx >= this->_idx) || idx < 0)
-        std::cout << RED << "No Materia found at index " << idx
+        std::cout << RED << "No Materia to unequip at index " << idx
             << " for Character " << this->name << RESET << std::endl;
     else if (this->items[idx] && !this->items[idx]->getIsNull())
     {

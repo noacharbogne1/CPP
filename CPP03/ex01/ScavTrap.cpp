@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:07:15 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 12:56:03 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:21:44 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ ScavTrap::ScavTrap(const ScavTrap &a) : ClapTrap(a.name){
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &toCopy){
+	if (*this == &a)
+		return *this;
 	this->name = toCopy.name;
 	this->hitPoints = toCopy.hitPoints;
 	this->energyPoints = toCopy.energyPoints;

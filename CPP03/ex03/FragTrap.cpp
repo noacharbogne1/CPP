@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 11:02:58 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 13:04:45 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:22:39 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ FragTrap::FragTrap(const FragTrap &a) : ClapTrap(a.name){
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &toCopy){
+	if (*this == &a)
+		return *this;
 	this->name = toCopy.name;
 	this->hitPoints = toCopy.hitPoints;
 	this->energyPoints = toCopy.energyPoints;

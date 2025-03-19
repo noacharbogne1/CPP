@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 12:42:14 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 13:08:35 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:22:33 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ DiamondTrap::DiamondTrap(const DiamondTrap &a) : ClapTrap(a.name), ScavTrap(a.na
 }
 
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &toCopy){
+	if (*this == &a)
+		return *this;
 	this->name = toCopy.name;
 	this->hitPoints = toCopy.hitPoints;
 	this->energyPoints = toCopy.energyPoints;
 	this->attackDamage = toCopy.attackDamage;
-
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:15 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 12:52:11 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/24 08:56:40 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void){
 	a.attack("Petit enfant");
 	a.takeDamage(8);
 	a.beRepaired(2);
-	a.takeDamage(4);
+	a.takeDamage(6);
 	a.beRepaired(2);
 	a.attack("Petit enfant");
 	a.takeDamage(4);

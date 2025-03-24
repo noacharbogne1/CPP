@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:24 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/19 16:21:35 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:41:51 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(void){
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
-	std::cout << name << " : ClapTrap default constructor called" << std::endl;
+	std::cout << this->name << ": ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name){
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(const ClapTrap &toCopy){
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &a){
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (*this == &a)
+	if (this == &a)
 		return *this;
 	name = a.name;
 	hitPoints = a.hitPoints;
@@ -63,7 +63,10 @@ void	ClapTrap::attack(const std::string &target){
 
 void	ClapTrap::takeDamage(unsigned int amount){
 	if (this->energyPoints > 0 && this->hitPoints > 0){
-		this->hitPoints -= amount;
+		if (this->hitPoints - (int)amount < 0)
+			this->hitPoints = 0;
+		else
+			this->hitPoints -= amount;
 		std::cout << "ClapTrap " << this->name << " took " << amount
 		<< " point of damage. " << std::endl
 		<< "\t-> " << this->hitPoints << " hit points left" << std::endl

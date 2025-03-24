@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:07:29 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 13:04:23 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:31:27 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ScavTrap : virtual public ClapTrap
 	private:
 		bool	guardMode;
 	protected:
-		const static int	energyPointsConst = 50;
+		int	energyPoints;
 	public:
 		ScavTrap(void);
 		ScavTrap(std::string name);

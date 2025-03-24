@@ -6,19 +6,18 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:07:15 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/19 16:22:46 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:41:14 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void){
-	this->name = "Default";
+ScavTrap::ScavTrap(void) : ClapTrap(){
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 	guardMode = false;
-	std::cout << name << " : ScavTrap default constructor called" << std::endl;
+	std::cout << this->name << ": ScavTrap default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
@@ -35,7 +34,7 @@ ScavTrap::ScavTrap(const ScavTrap &a) : ClapTrap(a.name){
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &toCopy){
-	if (*this == &a)
+	if (this == &toCopy)
 		return *this;
 	this->name = toCopy.name;
 	this->hitPoints = toCopy.hitPoints;

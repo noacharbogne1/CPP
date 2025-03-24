@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 11:02:58 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/24 09:41:09 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/24 10:04:54 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ FragTrap::~FragTrap(void){
 	std::cout << this->name << " : FragTrap destructor called" << std::endl;
 }
 
-void	FragTrap::highFivesGuys(void){
+void	FragTrap::highFiveGuys(void){
 	std::cout << "FragTrap " << this->name
 	<< " attempted to do a high five but nobody responded :(" << std::endl;
 }

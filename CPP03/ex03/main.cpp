@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:15 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/24 10:10:40 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/24 10:14:47 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ int main()
 
 	std::cout << "\033[34mTesting\033[0m" << std::endl;
 	a.whoAmI();
-	a.attack("some super random dude");
+	a.attack("some random dude");
 	b.whoAmI();
-	b.attack("Chadd-clone");
+	b.attack("another dude");
 	c.whoAmI();
+	a.takeDamage(190);
+	a.beRepaired(199);
 	std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
 	return (0);
 }

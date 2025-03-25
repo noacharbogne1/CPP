@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:37:29 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 10:30:40 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:56:52 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Ice : public AMateria
         Ice(const Ice& other);
         Ice &operator=(const Ice &other);
         ~Ice();
+        
         AMateria *clone(void) const;
         void use(ICharacter &target);
 };

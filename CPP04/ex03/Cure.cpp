@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:37:22 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 17:16:45 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:55:17 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ Cure::Cure(const Cure &other) : AMateria()
 Cure &Cure::operator=(const Cure &other)
 {
     std::cout << CYAN << "Cure" << GREY << " assignment operator called" << RESET << std::endl;
+    if (this == &other)
+        return *this;
     this->type = other.type;
     return (*this);
 }

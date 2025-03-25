@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:21 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 09:32:03 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:21:32 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class WrongAnimal
 		WrongAnimal(const WrongAnimal& other);
 		WrongAnimal &operator=(const WrongAnimal &other);
 		~WrongAnimal();
+		
 		std::string getType(void) const;
 		void makeSound(void) const;
 };

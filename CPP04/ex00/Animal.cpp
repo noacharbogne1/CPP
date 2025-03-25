@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:27 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 09:41:40 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:47:38 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ Animal::Animal(const Animal &other)
 Animal &Animal::operator=(const Animal &other)
 {
 	std::cout << "Assignment operator called" << std::endl;
+	if (this == &other)
+		return *this;
 	this->type = other.type;
 	return (*this);
 }

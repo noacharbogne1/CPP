@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:37:27 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 17:18:38 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:55:23 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ Ice::Ice(const Ice &other) : AMateria()
 Ice &Ice::operator=(const Ice &other)
 {
     std::cout << WHITE << "Ice" << GREY << " assignment operator called" << RESET << std::endl;
+    if (this == &other)
+        return *this;
     this->type = other.type;
     return (*this);
 }

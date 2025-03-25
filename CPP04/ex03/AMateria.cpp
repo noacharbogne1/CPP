@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:23:42 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 17:13:06 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:55:00 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ AMateria::AMateria(const AMateria &other)
 AMateria &AMateria::operator=(const AMateria &other)
 {
     std::cout << YELLOW << "AMateria" << GREY << "assignment operator called" << RESET << std::endl;
+    if (this == &other)
+        return *this;
     this->type = other.type;
     this->isNull = other.isNull;
     return (*this);

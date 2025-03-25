@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:32 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 11:15:39 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:53:38 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ Cat::Cat(const Cat &other)
 Cat &Cat::operator=(const Cat &other)
 {
 	std::cout << "Cat assignment operator called" << std::endl;
+	if (this == &other)
+		return *this;
 	this->type = other.type;
 	obj = new Brain();
 	*obj = *(other.obj);

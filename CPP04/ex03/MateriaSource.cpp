@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:47:29 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/18 10:48:21 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:55:36 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ MateriaSource::MateriaSource(const MateriaSource &other)
 MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
     std::cout << "Assignment operator called" << std::endl;
+    if (this == &other)
+        return *this;
     for (int i = 0; i < _idx; ++i)
         delete source[i];
     delete[] source;

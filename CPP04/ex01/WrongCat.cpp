@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:58 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 09:29:48 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:47:22 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ WrongCat::WrongCat(const WrongCat &other)
 WrongCat &WrongCat::operator=(const WrongCat &other)
 {
     std::cout << "WrongCat assignment operator called" << std::endl;
+    if (this == &other)
+        return *this;
     this->type = other.type;
     return (*this);
 }

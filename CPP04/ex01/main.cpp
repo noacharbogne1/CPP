@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:12 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 11:18:46 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:41:44 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 {
 	std::cout << "// Testing the deep copy //" << std::endl << std::endl;
 	const Dog a;
-	const Dog b(a);
+	const Dog b = a;
 	const Cat c;
 	const Cat d(c);
 
@@ -45,5 +45,6 @@ int main()
 		std::cout << "Animal : delete : number " << i << std::endl;
 		delete array[i];
 	}
+	std::cout << std::endl;
 	return 0;
 }

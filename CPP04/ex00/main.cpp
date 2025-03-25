@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:44:12 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/03/14 09:33:45 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/03/25 09:28:23 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ int main()
 	std::cout << std::endl << "//Examples of bad inheritance pratice//" << std::endl << std::endl;
 	const WrongAnimal* metaWrong = new WrongAnimal();
 	const WrongAnimal* iWrong = new WrongCat();
+	WrongCat good;
 	std::cout << iWrong->getType() << " " << std::endl;
 	iWrong->makeSound();
 	metaWrong->makeSound();
+	good.makeSound();
 	delete metaWrong;
 	delete iWrong;
 

@@ -3,6 +3,8 @@
 
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	private:
@@ -16,6 +18,8 @@ class Form
 		Form &operator=(const Form &other);
 		~Form();
 
+		Form(std::string name, int signGrade, int executeGrade);
+
 		std::string getName(void) const;
 		bool getSigned(void) const;
 		int getSignGrade(void) const;
@@ -25,37 +29,5 @@ class Form
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &a);
-
-class GradeTooHighException : public std::exception
-{
-	private:
-		std::string _msg;
-	public:
-		GradeTooHighException(int grade) {
-			std::stringstream ss;
-			ss << grade << ": Grade too high";
-			_msg = ss.str();
-		}
-		const char* what() const throw() {
-			return _msg.c_str();
-		}
-		~GradeTooHighException() throw() {}
-};
-
-class GradeTooLowException : public std::exception
-{
-	private:
-		std::string	_msg;
-	public:
-		GradeTooLowException(int grade) {
-			std::stringstream ss;
-			ss << grade << ": Grade too low";
-			_msg = ss.str();
-		}
-		const char* what() const throw() {
-			return _msg.c_str();
-		}
-		~GradeTooLowException() throw() {}
-};
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:16:06 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/04 15:00:38 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/14 15:44:44 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,20 @@ void	Bureaucrat::decreaseGrade(void)
 	}
 }
 
-void	Bureaucrat::signForm(void)
+void	Bureaucrat::signForm(Form &form)
 {
-	beSigned(*this);
+	try
+	{
+		form.beSigned(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << _name << " couldn't sign "
+			<< form.getName() << " because " << e.what() << '\n';
+		return ;
+	}
+	std::cout << _name << " signed " << form.getName() << std::endl;
+
 }
 
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat &a)

@@ -2,20 +2,26 @@
 
 Form::Form(void) : _name("default"), _signGrade(40), _executeGrade(5)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Form default constructor called" << std::endl;
+	return ;
+}
+
+Form::Form(std::string name, int signGrade, int executeGrade) : _name(name), _signGrade(signGrade), _executeGrade(executeGrade)
+{
+	std::cout << "Form complete constructor called" << std::endl;
 	return ;
 }
 
 Form::Form(const Form &other) : _signGrade(other._signGrade), _executeGrade(other._executeGrade)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Form copy constructor called" << std::endl;
 	*this = other;
 	return ;
 }
 
 Form &Form::operator=(const Form &other)
 {
-	std::cout << "Assignment operator called" << std::endl;
+	std::cout << "Form assignment operator called" << std::endl;
 	const_cast<std::string&>(_name) = other._name;
 	_signed = other._signed;
 	return (*this);
@@ -23,7 +29,7 @@ Form &Form::operator=(const Form &other)
 
 Form::~Form(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Form destructor called" << std::endl;
 	return ;
 }
 
@@ -49,17 +55,11 @@ int	Form::getExecuteGrade(void) const
 
 void	Form::beSigned(Bureaucrat &a)
 {
-	try
-	{
-		if (a.getGrade() > _signGrade)
-			throw GradeTooLowException(a.getGrade());
-		else
-			_signed = true;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+
+	if (a.getGrade() > _signGrade)
+		throw GradeTooLowException(a.getGrade());
+	else
+		_signed = true;
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &a)

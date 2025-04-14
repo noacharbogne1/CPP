@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:16:09 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/04 14:38:13 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/14 15:36:42 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 
 # include "Form.hpp"
 
-class Bureaucrat : public Form
+class Form;
+
+class Bureaucrat
 {
 	private:
 		const std::string _name;
@@ -39,7 +41,7 @@ class Bureaucrat : public Form
 		void increaseGrade(void);
 		void decreaseGrade(void);
 
-		void signForm(void);
+		void signForm(Form &form);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &a);

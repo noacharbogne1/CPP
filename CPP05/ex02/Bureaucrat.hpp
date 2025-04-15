@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:16:09 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/15 12:39:59 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:24:04 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,16 @@ class NotSignedException : public std::exception
 			return "Form is not signed";
 		}
 		~NotSignedException() throw() {}
+};
+
+class AlreadySignedException : public std::exception
+{
+	public :
+		AlreadySignedException() {}
+		const char* what() const throw() {
+			return "Form is already signed";
+		}
+		~AlreadySignedException() throw() {}
 };
 
 #endif

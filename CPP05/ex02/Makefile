@@ -6,7 +6,7 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 14:30:13 by ncharbog          #+#    #+#              #
-#    Updated: 2025/04/14 16:30:04 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/04/15 15:26:51 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CXX = c++
 
 NAME = AForm
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 SRC = main.cpp \
 	Bureaucrat.cpp \

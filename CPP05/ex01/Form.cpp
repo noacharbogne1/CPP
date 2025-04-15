@@ -3,12 +3,14 @@
 Form::Form(void) : _name("default"), _signGrade(40), _executeGrade(5)
 {
 	std::cout << "Form default constructor called" << std::endl;
+	_signed = false;
 	return ;
 }
 
 Form::Form(std::string name, int signGrade, int executeGrade) : _name(name), _signGrade(signGrade), _executeGrade(executeGrade)
 {
 	std::cout << "Form complete constructor called" << std::endl;
+	_signed = false;
 	return ;
 }
 

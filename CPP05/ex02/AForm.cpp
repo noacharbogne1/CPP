@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:23:21 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/15 12:40:17 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:28:43 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 AForm::AForm(void) : _name("default"), _signGrade(40), _executeGrade(5)
 {
     std::cout << "Default constructor called" << std::endl;
+	_signed = false;
     return ;
 }
 
@@ -48,6 +49,7 @@ AForm::~AForm(void)
 AForm::AForm(std::string name, int signGrade, int executeGrade) : _name(name), _signGrade(signGrade), _executeGrade(executeGrade)
 {
 	std::cout << "AForm complete constructor called" << std::endl;
+	_signed = false;
 	return ;
 }
 
@@ -76,6 +78,8 @@ void	AForm::beSigned(Bureaucrat &a)
 
 	if (a.getGrade() > _signGrade)
 		throw GradeTooLowException(a.getGrade());
+	else if (_signed == true)
+		throw AlreadySignedException();
 	else
 		_signed = true;
 }

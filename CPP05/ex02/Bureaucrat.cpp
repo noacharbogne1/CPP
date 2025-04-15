@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:16:06 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/15 12:38:03 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/15 13:00:49 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ void	Bureaucrat::executeForm(AForm const &form) const
 	try
 	{
 		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

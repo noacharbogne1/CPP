@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:34:15 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/14 16:54:11 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/15 11:17:52 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define AFORM_HPP
 
 # include <iostream>
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class AForm
 {
@@ -28,14 +31,18 @@ class AForm
         AForm &operator=(const AForm &other);
         ~AForm();
 
+        AForm(std::string name, int signGrade, int executeGrade);
+
         std::string getName(void) const;
 		bool getSigned(void) const;
 		int getSignGrade(void) const;
 		int getExecuteGrade(void) const;
 
 		void beSigned(Bureaucrat &a);
+        void checkExecutor(Bureaucrat const &executor) const;
+        virtual void execute(Bureaucrat const &executor) const = 0;
 };
 
-std::ostream &operator<<(std::ostream &os, const Form &a);
+std::ostream &operator<<(std::ostream &os, const AForm &a);
 
 #endif

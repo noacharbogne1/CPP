@@ -22,6 +22,8 @@ Form::Form(const Form &other) : _signGrade(other._signGrade), _executeGrade(othe
 Form &Form::operator=(const Form &other)
 {
 	std::cout << "Form assignment operator called" << std::endl;
+	if (this == &other)
+		return *this;
 	const_cast<std::string&>(_name) = other._name;
 	_signed = other._signed;
 	return (*this);

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:16:09 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/14 15:36:42 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/15 12:39:59 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include <sstream>
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -41,7 +41,8 @@ class Bureaucrat
 		void increaseGrade(void);
 		void decreaseGrade(void);
 
-		void signForm(Form &form);
+		void signForm(AForm &form);
+		void executeForm(AForm const &form) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &a);
@@ -76,6 +77,16 @@ class GradeTooLowException : public std::exception
 			return _msg.c_str();
 		}
 		~GradeTooLowException() throw() {}
+};
+
+class NotSignedException : public std::exception
+{
+	public:
+		NotSignedException() {}
+		const char* what() const throw() {
+			return "Form is not signed";
+		}
+		~NotSignedException() throw() {}
 };
 
 #endif

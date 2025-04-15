@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:16:09 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/14 15:36:42 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:33:18 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,13 @@ class Bureaucrat
 		void decreaseGrade(void);
 
 		void signForm(Form &form);
+		class GradeTooHighException;
+		class GradeTooLowException;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &a);
 
-class GradeTooHighException : public std::exception
+class Bureaucrat::GradeTooHighException : public std::exception
 {
 	private:
 		std::string _msg;
@@ -62,7 +64,7 @@ class GradeTooHighException : public std::exception
 		~GradeTooHighException() throw() {}
 };
 
-class GradeTooLowException : public std::exception
+class Bureaucrat::GradeTooLowException : public std::exception
 {
 	private:
 		std::string	_msg;

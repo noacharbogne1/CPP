@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 09:46:52 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/16 16:04:46 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:32:03 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void    ScalarConverter::convert(std::string &lit)
             throw ImpossibleConversionException();
     }
     else if (lit.size() == 1)
-        conv = static_cast<double>(lit[0]);
+        conv = static_cast<char>(lit[0]);
     else
         throw ImpossibleConversionException();
 

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 09:46:55 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/16 16:11:26 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:14:35 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 class ScalarConverter
 {
-    protected:
+    private:
         ScalarConverter();
     public:
         static void convert(std::string &lit);

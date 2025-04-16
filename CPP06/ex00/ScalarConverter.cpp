@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 09:46:52 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/16 16:03:08 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:04:46 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,16 @@ void    ScalarConverter::convert(std::string &lit)
 
     ref = conv;
     if (static_cast<int>(conv) > 255 || static_cast<int>(conv) < 0)
-        std::cout << "char: impossible conversion" << std::endl;
+        std::cout << "char: impossible" << std::endl;
     else if (isprint(static_cast<int>(conv)))
         std::cout << "char: " << static_cast<char>(conv) << std::endl;
     else
-        std::cout << "char: not printable" << std::endl;
+        std::cout << "char: Non displayable" << std::endl;
 
     if (ref >= std::numeric_limits<int>::min() && ref <= std::numeric_limits<int>::max())
         std::cout << "int: " << static_cast<int>(conv) << std::endl;
     else
-        std::cout << "int: impossible conversion" << std::endl;
+        std::cout << "int: impossible" << std::endl;
 
     if (ref >= -std::numeric_limits<float>::max() && ref <= std::numeric_limits<float>::max())
         std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(conv) << "f" << std::endl;

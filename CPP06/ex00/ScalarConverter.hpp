@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 09:46:55 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/16 15:56:21 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:05:15 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ImpossibleConversionException : public std::exception
     public:
 		ImpossibleConversionException() {}
 		const char* what() const throw() {
-			return "char: impossible conversion\nint: impossible conversion\nfloat: impossible conversion\ndouble: impossible conversion";
+			return "char: impossible\nint: impossible\nfloat: impossible\ndouble: impossible";
 		}
 		~ImpossibleConversionException() throw() {}
 };

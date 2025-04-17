@@ -1,5 +1,6 @@
 {
 	"files.associations": {
+		"ostream": "cpp",
 		"array": "cpp",
 		"atomic": "cpp",
 		"bit": "cpp",
@@ -49,7 +50,6 @@
 		"limits": "cpp",
 		"new": "cpp",
 		"numbers": "cpp",
-		"ostream": "cpp",
 		"span": "cpp",
 		"sstream": "cpp",
 		"stdexcept": "cpp",
@@ -57,6 +57,7 @@
 		"text_encoding": "cpp",
 		"cinttypes": "cpp",
 		"typeinfo": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"fstream": "cpp"
 	}
 }

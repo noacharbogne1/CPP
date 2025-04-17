@@ -6,18 +6,18 @@
 #    By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/04 14:30:13 by ncharbog          #+#    #+#              #
-#    Updated: 2025/04/16 13:49:23 by ncharbog         ###   ########.fr        #
+#    Updated: 2025/04/17 09:49:44 by ncharbog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 
-NAME = ScalarConverter
+NAME = Serializer
 
 CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 SRC = main.cpp \
-	ScalarConverter.cpp
+	Serializer.cpp
 
 OBJ_DIR = .objects
 

@@ -6,11 +6,23 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 09:46:52 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/16 16:32:03 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:29:58 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+ScalarConverter::ScalarConverter(const ScalarConverter& other)
+{
+    (void)other;
+    return ;
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
+{
+    (void)other;
+    return *this;
+}
 
 static bool    isInt(const std::string &lit)
 {

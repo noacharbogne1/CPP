@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:13:32 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/17 09:44:50 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:26:29 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ typedef struct s_Data
 class Serializer
 {
     private:
-        Serializer();
+        Serializer() {}
+		Serializer(const Serializer& other);
+		Serializer &operator=(const Serializer &other);
+		~Serializer() {}
     public:
         static uintptr_t serialize(Data *ptr);
         static Data *deserialize(uintptr_t raw);

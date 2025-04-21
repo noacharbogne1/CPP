@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 09:22:43 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/21 13:52:42 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/21 13:57:22 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,8 @@ class MutantStack : public std::stack<T>
 		~MutantStack() {}
 
 		typedef typename std::deque<T>::iterator iterator;
-		iterator begin(){
-			return this->c.begin();
-		}
-		iterator end(){
-			return this->c.end();
-		}
+		iterator begin(){return this->c.begin();}
+		iterator end(){return this->c.end();}
 };
 
 #endif

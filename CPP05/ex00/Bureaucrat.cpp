@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:16:06 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/04 13:41:50 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:50:50 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ Bureaucrat::Bureaucrat(int grade) : _name("default")
 	catch (const std::exception &e)
 	{
 		_grade = 150;
-		std::cerr << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: construction of " << _name << " failed. "
+			<< e.what() << std::endl;
 	}
 	return ;
 }
@@ -48,7 +49,20 @@ Bureaucrat::Bureaucrat(std::string name) : _name(name)
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	std::cout << _name << ": Bureaucrat name + grade constructor called" << std::endl;
-	_grade = grade;
+	try
+	{
+		if (grade > 150)
+			throw GradeTooLowException(grade);
+		if (grade < 1)
+			throw GradeTooHighException(grade);
+		_grade = grade;
+	}
+	catch (const std::exception &e)
+	{
+		_grade = 150;
+		std::cerr << "Error: construction of " << _name << " failed. "
+			<< e.what() << std::endl;
+	}
 	return ;
 }
 
@@ -110,7 +124,7 @@ void	Bureaucrat::decreaseGrade(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "Error: decreasing of bureaucrat" << _name << " failed. "
+		std::cerr << "Error: decreasing of bureaucrat " << _name << " failed. "
 		<< e.what() << std::endl;
 	}
 }

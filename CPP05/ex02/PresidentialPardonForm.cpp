@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:23:28 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/15 12:57:43 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:11:52 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,5 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
     checkExecutor(executor);
-
     std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

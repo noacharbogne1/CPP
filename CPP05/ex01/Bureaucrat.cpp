@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:16:06 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/14 15:44:44 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:59:14 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ Bureaucrat::Bureaucrat(int grade) : _name("default")
 	try
 	{
 		if (grade > 150)
-			throw GradeTooHighException(grade);
-		if (grade < 1)
 			throw GradeTooLowException(grade);
+		if (grade < 1)
+			throw GradeTooHighException(grade);
 		_grade = grade;
 	}
 	catch (const std::exception &e)
 	{
 		_grade = 150;
-		std::cerr << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: construction of " << _name << " failed. "
+			<< e.what() << std::endl;
 	}
 	return ;
 }

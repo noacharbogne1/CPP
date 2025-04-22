@@ -10,6 +10,22 @@ Form::Form(void) : _name("default"), _signGrade(40), _executeGrade(5)
 Form::Form(std::string name, int signGrade, int executeGrade) : _name(name), _signGrade(signGrade), _executeGrade(executeGrade)
 {
 	std::cout << "Form complete constructor called" << std::endl;
+	try
+	{
+		if (signGrade < 1)
+			throw GradeTooHighException(signGrade);
+		else if (executeGrade < 1)
+			throw GradeTooHighException(executeGrade);
+		else if (signGrade > 150)
+			throw GradeTooLowException(signGrade);
+		else if (executeGrade > 150)
+			throw GradeTooLowException(executeGrade);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: construction of form " << _name << "failed. "
+			<< e.what() << std::endl;
+	}
 	_signed = false;
 	return ;
 }
@@ -62,6 +78,8 @@ void	Form::beSigned(Bureaucrat &a)
 
 	if (a.getGrade() > _signGrade)
 		throw GradeTooLowException(a.getGrade());
+	else if (_signed == true)
+		throw AlreadySignedException();
 	else
 		_signed = true;
 }
@@ -72,8 +90,8 @@ std::ostream &operator<<(std::ostream &os, const Form &a)
 		<< a.getSignGrade() << " to be signed and grade "
 		<< a.getExecuteGrade() << " to be executed.";
 	if (a.getSigned() == 1)
-		os << "Form is signed" << std::endl;
+		os << " Form is signed" << std::endl;
 	else
-		os << "Form is not signed" << std::endl;
+		os << " Form is not signed" << std::endl;
 	return os;
 }

@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:41:28 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/15 16:23:34 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:37:06 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,17 @@ AForm *Intern::makeForm(const std::string &name, const std::string &target)
     std::string choice[3] = {"PresidentialPardonForm",
             "RobotomyRequestForm", "ShrubberyCreationForm"};
 
-    for(; n < 3 && choice[n] != name ;n++);
+    for(; n < 3 && choice[n] != name; n++);
     switch(n)
     {
         case 0:
+            std::cout << "Intern creates " << choice[n] << std::endl;
             return new PresidentialPardonForm(target);
         case 1:
+            std::cout << "Intern creates " << choice[n] << std::endl;
             return new RobotomyRequestForm(target);
         case 2:
+            std::cout << "Intern creates " << choice[n] << std::endl;
             return new ShrubberyCreationForm(target);
         default:
             std::cout << name << ": this form doesn't exist" << std::endl;

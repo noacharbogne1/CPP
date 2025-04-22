@@ -27,6 +27,8 @@ class Form
 
 		void beSigned(Bureaucrat &a);
 		class GradeTooLowException;
+		class GradeTooHighException;
+		class AlreadySignedException;
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &a);
@@ -45,6 +47,32 @@ class Form::GradeTooLowException : public std::exception
 			return _msg.c_str();
 		}
 		~GradeTooLowException() throw() {}
+};
+
+class Form::GradeTooHighException : public std::exception
+{
+	private:
+		std::string	_msg;
+	public:
+		GradeTooHighException(int grade) {
+			std::stringstream ss;
+			ss << grade << ": Grade too high";
+			_msg = ss.str();
+		}
+		const char* what() const throw() {
+			return _msg.c_str();
+		}
+		~GradeTooHighException() throw() {}
+};
+
+class Form::AlreadySignedException : public std::exception
+{
+	public :
+		AlreadySignedException() {}
+		const char* what() const throw() {
+			return "Form is already signed";
+		}
+		~AlreadySignedException() throw() {}
 };
 
 #endif

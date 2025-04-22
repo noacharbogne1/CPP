@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:41:30 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/15 15:54:57 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:07:56 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,17 @@ class Intern
         ~Intern();
 
         AForm *makeForm(const std::string &name, const std::string &target);
+        class InexistantFormException;
+};
+
+class Intern::InexistantFormException : public std::exception
+{
+    public :
+		InexistantFormException() {}
+		const char* what() const throw() {
+			return "Form does not exist";
+		}
+		~InexistantFormException() throw() {}
 };
 
 #endif

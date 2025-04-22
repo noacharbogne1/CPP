@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:41:28 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/22 14:37:06 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:07:47 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ AForm *Intern::makeForm(const std::string &name, const std::string &target)
             std::cout << "Intern creates " << choice[n] << std::endl;
             return new ShrubberyCreationForm(target);
         default:
-            std::cout << name << ": this form doesn't exist" << std::endl;
+            throw InexistantFormException();
     }
     return NULL;
 }

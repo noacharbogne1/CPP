@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 15:18:27 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/21 15:50:29 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:57:20 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 			return 0;
 		}
 		BitcoinExchange db;
+		db.saveData();
 		db.readFile(in);
 	}
 	else

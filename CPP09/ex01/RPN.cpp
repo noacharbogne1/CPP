@@ -6,14 +6,25 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:15:30 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/23 17:53:49 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/30 10:19:15 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
+double Operation::add(double a, double b) {return a + b;}
+double Operation::divide(double a, double b)
+{
+	if (b == 0)
+		throw DivideByZeroException();
+	return a / b;
+}
+double Operation::multiply(double a, double b) {return a * b;}
+double Operation::substract(double a, double b) {return a - b;}
+
 double	Operation::identifyOperation(char c, double a, double b)
 {
+	std::cout << "a: " << a << " b: " << b << std::endl;
 	if (c == '*')
 		return multiply(a, b);
 	else if (c == '/')
@@ -25,7 +36,7 @@ double	Operation::identifyOperation(char c, double a, double b)
 	return 0;
 }
 
-bool	isOperator(char c)
+bool	RPN::isOperator(char c)
 {
 	if (c == '-' || c == '+' || c == '/' || c == '*')
 		return true;
@@ -62,7 +73,9 @@ void	RPN::readLine(std::string &line)
 	{
 		if (isdigit(line[i]))
 		{
-			char *c = &line[i];
+			char c[2];
+			c[0] = line[i];
+			c[1] = '\0';
 			_stack.push(atoi(c));
 		}
 		if (isOperator(line[i]) && _op > 0)
@@ -71,8 +84,17 @@ void	RPN::readLine(std::string &line)
 			_stack.pop();
 			double a = _stack.top();
 			_stack.pop();
-			_stack.push(identifyOperation(line[i], a, b));
+			try
+			{
+				_stack.push(identifyOperation(line[i], a, b));
+			}
+			catch(const std::exception& e)
+			{
+				std::cerr << e.what() << '\n';
+				return ;
+			}
 			_op--;
+			std::cout << "op : " << _op << " top: " << _stack.top() << std::endl;
 		}
 		if (_op == 0)
 			std::cout << _stack.top() << std::endl;

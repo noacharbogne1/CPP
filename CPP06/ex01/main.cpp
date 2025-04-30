@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:13:16 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/17 09:56:33 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/04/30 14:28:47 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	main(void)
 	uintptr_t ptr = Serializer::serialize(d);
 	std::cout << "d adress " << d << " | ptr " << ptr << std::endl;
 	Data *r = Serializer::deserialize(ptr);
-	std::cout << "r adress " << r << " | r A " << r->A << " | r string " << r->nonEmpty << std::endl;
+	std::cout << "r adress " << r << " | r A : " << r->A << " | r string : " << r->nonEmpty << std::endl;
 	delete d;
 }

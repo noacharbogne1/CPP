@@ -6,7 +6,7 @@
 /*   By: ncharbog <ncharbog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 14:26:00 by ncharbog          #+#    #+#             */
-/*   Updated: 2025/04/17 15:56:06 by ncharbog         ###   ########.fr       */
+/*   Updated: 2025/05/01 13:05:58 by ncharbog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class Array
 				arr = new T;
 		}
 		~Array() {
-			delete arr;
+			delete[] arr;
 		}
 
 		T &operator[](unsigned int i) {
